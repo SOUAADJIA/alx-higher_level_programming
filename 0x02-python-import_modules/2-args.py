@@ -2,7 +2,7 @@
 import sys
 
 if __name__ == "__main__":
-    argv = sys.argv[1:]  # without script name 
+    argv = sys.argv[1:]  # without script name
 
     nbr_args = len(argv)
 
