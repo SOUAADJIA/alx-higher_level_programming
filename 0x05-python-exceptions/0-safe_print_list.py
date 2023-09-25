@@ -5,8 +5,6 @@ def safe_print_list(my_list=[], x=0):
         while count < x:
             print(my_list[count], end=" ")
             count += 1
-    except IndexError:
-        pass
-    finally:
+    except:
         print()
     return count
