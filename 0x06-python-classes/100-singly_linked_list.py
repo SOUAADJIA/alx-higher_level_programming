@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Define node in a singly linked list."""
 
 
 class Node:
@@ -41,35 +42,36 @@ class SinglyLinkedList:
         """Initialize an empty linked list."""
         self.head = None
 
+    def to_string(self):
+        """Convert the linked list to a string for printing."""
+        string = ''
+        current = self.head
+        while current:
+            string += str(current.data) + '\n'
+            current = current.next_node
+        return string[:-1]
+
     def sorted_insert(self, value):
         """Insert a new Node into the correct sorted position."""
         new_node = Node(value)
         current = self.head
 
         if current is None:
+            # If the list is empty, set the new node as the head.
             self.head = new_node
             return
 
         if current.data > value:
+            # If the new node should be the new head, update the head.
             new_node.next_node = self.head
             self.head = new_node
             return
 
         while current.next_node is not None:
+            # Find the correct position to insert the new node.
             if current.next_node.data > value:
                 break
             current = current.next_node
 
         new_node.next_node = current.next_node
         current.next_node = new_node
-
-    def __str__(self):
-        """Convert the linked list to a string for printing."""
-        string = ''
-        current = self.head
-
-        while current:
-            string += str(current.data) + '\n'
-            current = current.next_node
-
-        return string.strip()
