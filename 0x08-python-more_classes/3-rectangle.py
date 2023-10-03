@@ -6,6 +6,7 @@ to calculate its area and perimeter. It also defines methods to
 print the rectangle using '#' characters.
 """
 
+
 class Rectangle:
     """Represents a rectangle."""
 
@@ -80,7 +81,8 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Returns a string representation of the rectangle using '#' characters."""
+        """Returns a string representation of the
+        rectangle using '#' characters."""
         if self.__width == 0 or self.__height == 0:
             return ""
         rectangle_str = ""
