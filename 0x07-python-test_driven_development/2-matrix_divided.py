@@ -2,7 +2,7 @@
 """
 Matrix Division Module
 
-Contains a function matrix_divided that divides all elements of a matrix by 
+Contains a function matrix_divided that divides all elements of a matrix by
 a given number.
 """
 
@@ -16,7 +16,7 @@ def matrix_divided(matrix, div):
         div (int or float): The divisor value.
 
     Returns:
-        list: New matrix with elements divided by div, rounded to 
+        list: New matrix with elements divided by div, rounded to
         2 decimal places.
 
     Raises:
@@ -25,8 +25,9 @@ def matrix_divided(matrix, div):
         TypeError: If div is not a number (integer or float).
         ZeroDivisionError: If div is equal to 0.
     """
-    error_message = 'matrix must be a matrix (list of lists) of integers/floats'
-
+    error_message = (
+            'matrix must be a matrix (list of lists) of integers/floats'
+            )
     if not isinstance(matrix, list) or not all(
             isinstance(row, list) for row in matrix):
         raise TypeError(error_message)
