@@ -2,7 +2,8 @@
 """
 Matrix Division Module
 
-Contains a function matrix_divided that divides all elements of a matrix by a given number.
+Contains a function matrix_divided that divides all elements of a matrix by 
+a given number.
 """
 
 
@@ -15,7 +16,8 @@ def matrix_divided(matrix, div):
         div (int or float): The divisor value.
 
     Returns:
-        list: New matrix with elements divided by div, rounded to 2 decimal places.
+        list: New matrix with elements divided by div, rounded to 
+        2 decimal places.
 
     Raises:
         TypeError: If matrix is not a list of lists of integers or floats.
@@ -25,7 +27,8 @@ def matrix_divided(matrix, div):
     """
     error_message = 'matrix must be a matrix (list of lists) of integers/floats'
 
-    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
+    if not isinstance(matrix, list) or not all(
+            isinstance(row, list) for row in matrix):
         raise TypeError(error_message)
 
     for row in matrix:
@@ -47,6 +50,7 @@ def matrix_divided(matrix, div):
     result_matrix = [row[:] for row in matrix]
     for row_idx in range(len(matrix)):
         for col_idx in range(len(matrix[0])):
-            result_matrix[row_idx][col_idx] = round(matrix[row_idx][col_idx] / div, 2)
+            result_matrix[row_idx][col_idx] = round(
+                    matrix[row_idx][col_idx] / div, 2)
 
     return result_matrix
