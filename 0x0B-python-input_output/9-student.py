@@ -16,9 +16,7 @@ class Student:
         """Retrieves a dictionary representation of a Student
         instance."""
         json_dict = {}
-        # Get all public attributes of the object
         attributes = self.__dict__
-        # Iterate through attributes and add them to the dictionary if they are serializable
         for key, value in attributes.items():
             if isinstance(value, (int, str)):
                 json_dict[key] = value
