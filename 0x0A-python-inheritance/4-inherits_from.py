@@ -16,4 +16,3 @@ def inherits_from(obj, a_class):
         if inherits_from(base_class(), a_class):
             return (True)
     return (False)
-
