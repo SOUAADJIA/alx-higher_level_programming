@@ -1,92 +1,13 @@
-The Module to 1-my_list
-------------------------------
+The ``1-my_list`` module
+##############################
 
-Using print_sorted
-------------------------------
+Using ``my_list``
+-------------------
 
-This is a text file in reStructured Text format. First import print_sorted from the 1-my_list module:
+This is an example text file in reStructuredText format. First import
+``my_list`` from the ``my_list`` module:
 
 >>> MyList = __import__('1-my_list').MyList
-
-Now use it:
-------------------------------
->>> my_list = MyList()
-
-# TEST1 - Empty List
-# Printing an empty list
->>> my_list.print_sorted()
-[]
-
-# Create a MyList instance with a single string element
->>> a_list = MyList('apple')
-
-# TEST2 - List with a single string element
-# Printing a list with a single string element
->>> a_list.print_sorted()
-['apple']
-
-# Create a MyList instance with strings
->>> str_list = MyList('orange')
-
-# TEST3 - List with several string elements
-# Printing a list with several string elements, sorted alphabetically
->>> str_list.print_sorted()
-['a', 'e', 'g', 'n', 'o', 'r']
-
-# Append integer elements to the list
->>> my_list.append(5)
->>> my_list.append(2)
->>> my_list.append(1)
->>> my_list.append(3)
->>> my_list.append(4)
-
-# TEST4 - List with appended integer elements
-# Printing the list with appended integer elements, sorted in ascending order
->>> my_list.print_sorted()
-[1, 2, 3, 4, 5]
-
-# TEST5 - Comparing original list with the sorted list
-# Comparing the original list with the sorted list (should return False)
->>> my_list.print_sorted() == my_list
-False
-
-# Create a MyList instance and append zeros
->>> zero_list = MyList()
->>> zero_list.append(0)
->>> zero_list.append(0)
->>> zero_list.append(0)
->>> zero_list.append(0)
->>> zero_list.append(0)
-
-# TEST6 - List with appended zero elements
-# Printing the list with appended zero elements
->>> zero_list.print_sorted()
-[0, 0, 0, 0, 0]
-
-# Attempt to create a MyList instance with a float element (raises TypeError)
->>> float_list = MyList(3.5)
-Traceback (most recent call last):
-...
-TypeError: 'float' object is not iterable
-
-# Attempt to create a MyList instance with 'inf' (raises TypeError)
->>> inf_list = MyList(float('inf'))
-Traceback (most recent call last):
-...
-TypeError: 'float' object is not iterable
-
-# Attempt to create a MyList instance with 'nan' (raises TypeError)
->>> nan_list = MyList(float('nan'))
-Traceback (most recent call last):
-...
-TypeError: 'float' object is not iterable
-
-# Attempt to append a string element to the list (raises TypeError)
->>> my_list.append('banana')
-Traceback (most recent call last):
-...
-TypeError: unorderable types: str() < int()
-
 
 >>> my_list = MyList([1, 5, 8, 3, 2])
 >>> print(my_list)
