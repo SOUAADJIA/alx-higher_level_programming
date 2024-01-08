@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
-const numOccu = process.argv[2];
+const numOccurrences = process.argv[2];
 
-if (!numOccu || isNaN(numOccu) || numOccu <= 0) {
+if (!numOccurrences || isNaN(numOccurrences) || numOccurrences <= 0) {
   console.log('Missing number of occurrences');
 } else {
-  for (let i = 0; i < numOccu; i++) {
+  for (let i = 0; i < numOccurrences; i++) {
     console.log('C is fun');
   }
 }
