@@ -2,14 +2,10 @@
 
 class Rectangle {
   constructor (w, h) {
-    // Check if w or h is equal to 0 or not a positive integer
-    if (w <= 0 || h <= 0 || isNaN(w) || isNaN(h)) {
-      // Create an empty object
-      return {};
+    if (parseInt(w) > 0 && parseInt(h) > 0) {
+      this.width = w;
+      this.height = h;
     }
-
-    this.width = w;
-    this.height = h;
   }
 }
 
