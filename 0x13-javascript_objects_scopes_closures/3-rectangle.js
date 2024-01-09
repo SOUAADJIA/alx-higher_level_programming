@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 class Rectangle {
-  constructor(w, h) {
+  constructor (w, h) {
     if (parseInt(w) > 0 && parseInt(h) > 0) {
       this.width = w;
       this.height = h;
@@ -12,7 +12,7 @@ class Rectangle {
   }
 
   // Instance method to print the rectangle
-  print() {
+  print () {
     // Check if the object is empty
     if (Object.keys(this).length === 0) {
       return;
