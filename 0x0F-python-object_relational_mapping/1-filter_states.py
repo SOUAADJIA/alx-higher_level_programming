@@ -14,7 +14,6 @@ if __name__ == "__main__":
         user=argv[1],
         passwd=argv[2],
         db=argv[3],
-        charset="utf8"
     )
     cursor = db.cursor()
 
