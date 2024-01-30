@@ -4,6 +4,7 @@ This script fetches https://alx-intranet.hbtn.io/status
 using the requests package.
 """
 
+
 import requests
 
 if __name__ == "__main__":
@@ -12,4 +13,4 @@ if __name__ == "__main__":
 
     print("Body response:")
     print("\t- type: {}".format(type(response.text)))
-    print("\t- content: {}".format(response.text))
+    print("\t- content: {}".format(response.text.strip()))
