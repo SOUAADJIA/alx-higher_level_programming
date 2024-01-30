@@ -8,9 +8,7 @@ using the requests package.
 import requests
 
 if __name__ == "__main__":
-    url = 'https://alx-intranet.hbtn.io/status'
-    response = requests.get(url)
-
-    print("Body response:")
-    print("\t- type: {}".format(type(response.text)))
-    print("\t- content: {}".format(response.text.strip()))
+    url = "https://alx-intranet.hbtn.io/status"
+    text = requests.get(url).text
+    response_str = 'Body response:\n\t- type: {}\n\t- content: {}'
+    print(response_str.format(type(text), text))
