@@ -5,33 +5,28 @@ const request = require('request');
 const movieId = process.argv[2];
 const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
-request.get(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error(error);
+request(apiUrl, (err, response, body) => {
+  if (err) {
+    console.error(err);
     return;
   }
+  const data = JSON.parse(body);
 
-  const movieData = JSON.parse(body);
-  const charactersUrls = movieData.characters;
-
-  const fetchCharacter = (characterUrl) => {
-    return new Promise((resolve, reject) => {
-      request.get(characterUrl, (error, response, body) => {
-        if (error) {
-          reject(error);
+  let characterIndex = 0;
+  const fetchCharacter = () => {
+    if (characterIndex < data.characters.length) {
+      const characterUrl = data.characters[characterIndex++];
+      request(characterUrl, (err, response, body) => {
+        if (err) {
+          console.error(err);
           return;
         }
         const characterData = JSON.parse(body);
-        resolve(characterData.name);
+        console.log(characterData.name);
+        fetchCharacter();
       });
-    });
+    }
   };
 
-  Promise.all(charactersUrls.map(fetchCharacter))
-    .then(characters => {
-      characters.forEach(character => console.log(character));
-    })
-    .catch(error => {
-      console.error(error);
-    });
+  fetchCharacter();
 });
